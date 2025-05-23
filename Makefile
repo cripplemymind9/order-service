@@ -76,7 +76,7 @@ test: install-gotestsum # Run all tests
 install-pre-push-hook: # Install pre push git hook
 	$(info Installing pre-push hook...)
 	@mkdir -p .git/hooks
-	@cp scripts/pre-push .git/hooks/pre-push
+	@cp -r scripts/pre-push .git/hooks/pre-push
 	@chmod +x .git/hooks/pre-push
 	$(info Pre-push hook installed.)
 
