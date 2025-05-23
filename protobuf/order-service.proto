@@ -21,24 +21,18 @@ option (grpc.gateway.protoc_gen_openapiv2.options.openapiv2_swagger) = {
 // Статусы заказа
 enum OrderStatus {
     ORDER_STATUS_UNSPECIFIED = 0;
-    ORDER_STATUS_CREATED = 1;
+    ORDER_STATUS_PENDING = 1;
     ORDER_STATUS_PROCESSING = 2;
     ORDER_STATUS_APPROVED = 3;
-    ORDER_STATUS_CANCELLED = 4;
+    ORDER_STATUS_REJECTED = 4;
     ORDER_STATUS_COMPLETED = 5;
 }
 
 // Запрос на создание заказа
 message CreateOrderRequest {
-    int64 user_id = 1 [(validate.rules).int64 = {
-        gt: 0
-    }];
-    int64 product_id = 2 [(validate.rules).int64 = {
-        gt: 0
-    }];
-    int32 quantity = 3 [(validate.rules).int32 = {
-        gt: 0
-    }];
+    int64 user_id = 1 [(validate.rules).int64 = {gt: 0}];
+    int64 product_id = 2 [(validate.rules).int64 = {gt: 0}];
+    int32 quantity = 3 [(validate.rules).int32 = {gt: 0}];
 }
 
 // Ответ на создание заказа
@@ -48,9 +42,7 @@ message CreateOrderResponse {
 
 // Запрос на получение информации о заказе
 message GetOrderRequest {
-    int64 order_id = 1 [(validate.rules).int64 = {
-        gt: 0
-    }];
+    int64 order_id = 1 [(validate.rules).int64 = {gt: 0}];
 }
 
 // Ответ с информацией о заказе
@@ -66,9 +58,7 @@ message GetOrderResponse {
 
 // Запрос на отмену заказа
 message CancelOrderRequest {
-    int64 order_id = 1 [(validate.rules).int64 = {
-        gt: 0
-    }];
+    int64 order_id = 1 [(validate.rules).int64 = {gt: 0}];
 }
 
 // Ответ на отмену заказа

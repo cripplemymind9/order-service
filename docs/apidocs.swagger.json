@@ -191,10 +191,10 @@
       "type": "string",
       "enum": [
         "ORDER_STATUS_UNSPECIFIED",
-        "ORDER_STATUS_CREATED",
+        "ORDER_STATUS_PENDING",
         "ORDER_STATUS_PROCESSING",
         "ORDER_STATUS_APPROVED",
-        "ORDER_STATUS_CANCELLED",
+        "ORDER_STATUS_REJECTED",
         "ORDER_STATUS_COMPLETED"
       ],
       "default": "ORDER_STATUS_UNSPECIFIED",

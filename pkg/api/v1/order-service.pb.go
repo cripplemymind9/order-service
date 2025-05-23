@@ -30,10 +30,10 @@ type OrderStatus int32
 
 const (
 	OrderStatus_ORDER_STATUS_UNSPECIFIED OrderStatus = 0
-	OrderStatus_ORDER_STATUS_CREATED     OrderStatus = 1
+	OrderStatus_ORDER_STATUS_PENDING     OrderStatus = 1
 	OrderStatus_ORDER_STATUS_PROCESSING  OrderStatus = 2
 	OrderStatus_ORDER_STATUS_APPROVED    OrderStatus = 3
-	OrderStatus_ORDER_STATUS_CANCELLED   OrderStatus = 4
+	OrderStatus_ORDER_STATUS_REJECTED    OrderStatus = 4
 	OrderStatus_ORDER_STATUS_COMPLETED   OrderStatus = 5
 )
 
@@ -41,18 +41,18 @@ const (
 var (
 	OrderStatus_name = map[int32]string{
 		0: "ORDER_STATUS_UNSPECIFIED",
-		1: "ORDER_STATUS_CREATED",
+		1: "ORDER_STATUS_PENDING",
 		2: "ORDER_STATUS_PROCESSING",
 		3: "ORDER_STATUS_APPROVED",
-		4: "ORDER_STATUS_CANCELLED",
+		4: "ORDER_STATUS_REJECTED",
 		5: "ORDER_STATUS_COMPLETED",
 	}
 	OrderStatus_value = map[string]int32{
 		"ORDER_STATUS_UNSPECIFIED": 0,
-		"ORDER_STATUS_CREATED":     1,
+		"ORDER_STATUS_PENDING":     1,
 		"ORDER_STATUS_PROCESSING":  2,
 		"ORDER_STATUS_APPROVED":    3,
-		"ORDER_STATUS_CANCELLED":   4,
+		"ORDER_STATUS_REJECTED":    4,
 		"ORDER_STATUS_COMPLETED":   5,
 	}
 )
@@ -446,13 +446,13 @@ const file_order_service_proto_rawDesc = "" +
 	"\x12CancelOrderRequest\x12\"\n" +
 	"\border_id\x18\x01 \x01(\x03B\a\xfaB\x04\"\x02 \x00R\aorderId\"0\n" +
 	"\x13CancelOrderResponse\x12\x19\n" +
-	"\border_id\x18\x01 \x01(\x03R\aorderId*\xb5\x01\n" +
+	"\border_id\x18\x01 \x01(\x03R\aorderId*\xb4\x01\n" +
 	"\vOrderStatus\x12\x1c\n" +
 	"\x18ORDER_STATUS_UNSPECIFIED\x10\x00\x12\x18\n" +
-	"\x14ORDER_STATUS_CREATED\x10\x01\x12\x1b\n" +
+	"\x14ORDER_STATUS_PENDING\x10\x01\x12\x1b\n" +
 	"\x17ORDER_STATUS_PROCESSING\x10\x02\x12\x19\n" +
-	"\x15ORDER_STATUS_APPROVED\x10\x03\x12\x1a\n" +
-	"\x16ORDER_STATUS_CANCELLED\x10\x04\x12\x1a\n" +
+	"\x15ORDER_STATUS_APPROVED\x10\x03\x12\x19\n" +
+	"\x15ORDER_STATUS_REJECTED\x10\x04\x12\x1a\n" +
 	"\x16ORDER_STATUS_COMPLETED\x10\x052\xff\x02\n" +
 	"\fOrderService\x12t\n" +
 	"\vCreateOrder\x12'.api.v1.orderservice.CreateOrderRequest\x1a(.api.v1.orderservice.CreateOrderResponse\"\x12\x82\xd3\xe4\x93\x02\f:\x01*\"\a/orders\x12s\n" +
